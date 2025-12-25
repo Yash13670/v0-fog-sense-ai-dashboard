@@ -1,30 +1,152 @@
-# FogSense AI dashboard
+# 🌫️ KohraRakshak – AI-Based Fog Safety System
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+KohraRakshak is an AI-powered road safety application designed to **prevent fog-related road accidents before they happen**.  
+Instead of reacting after an accident, the system focuses on **early detection, risk prediction, and real-time driver guidance**.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/cheeko13670-1178s-projects/v0-fog-sense-ai-dashboard)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/pxWVnu5nJSv)
+---
 
-## Overview
+## 🚨 Problem Statement
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+During winter, dense fog significantly reduces road visibility, leading to:
+- Chain collisions on highways
+- Delayed driver reactions
+- Panic braking and misjudgment
 
-## Deployment
+Most existing solutions:
+- Only show weather information
+- Rely on human judgment
+- React **after** accidents occur
 
-Your project is live at:
+👉 **KohraRakshak addresses this gap by providing proactive, data-driven safety alerts.**
 
-**[https://vercel.com/cheeko13670-1178s-projects/v0-fog-sense-ai-dashboard](https://vercel.com/cheeko13670-1178s-projects/v0-fog-sense-ai-dashboard)**
+---
 
-## Build your app
+## 🛡️ Solution Overview
 
-Continue building your app on:
+KohraRakshak is a **dashboard-based automatic safety system** that:
+- Measures fog using **visibility data**
+- Predicts **accident risk**
+- Alerts drivers with **clear, actionable guidance**
 
-**[https://v0.app/chat/pxWVnu5nJSv](https://v0.app/chat/pxWVnu5nJSv)**
+⚠️ This is **not a chatbot**  
+⚠️ No camera-based detection  
+⚠️ No manual user input required  
 
-## How It Works
+---
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## 🔄 How It Works (End-to-End Flow)
+
+1. **Weather & Visibility Data Collection**
+   - Fetches real-time or simulated weather data
+   - Uses visibility (in meters) as the primary indicator
+
+2. **Fog Detection**
+   - Visibility > 1000 m → No Fog  
+   - Visibility 300–1000 m → Medium Fog  
+   - Visibility < 300 m → Dense Fog  
+
+3. **Accident Risk Prediction**
+   - Combines:
+     - Fog level
+     - Time of day (Day/Night)
+     - Road type (Highway/City)
+   - Outputs risk level:
+     - LOW / MEDIUM / HIGH
+
+4. **Driver Alert & Guidance**
+   - Real-time visual and voice alerts
+   - Clear actions like:
+     - Reduce speed
+     - Maintain distance
+     - Drive with caution
+
+---
+
+## ✨ Core Features
+
+- 🌫️ **Real-Time Fog Detection**
+- ⚠️ **Explainable Accident Risk Prediction**
+- 🚦 **Driver Alerts with Actionable Guidance**
+- 🔊 **Voice Alerts for Hands-Free Safety**
+- 🗺️ **Optional Fog Zone Visualization (Map View)**
+
+---
+
+## ❌ What This Project Does NOT Do
+
+- ❌ No chatbot or conversational UI  
+- ❌ No camera-based fog detection  
+- ❌ No heavy machine learning models  
+- ❌ No medical, insurance, or post-accident services  
+
+The focus is **prevention, simplicity, and reliability**.
+
+---
+
+## 🧠 Why No Camera?
+
+In dense fog:
+- Cameras suffer from blur and low contrast
+- Visual systems fail to see beyond a few meters
+
+✔️ Visibility data provides **numerical, reliable measurements**  
+✔️ Used in aviation and highway safety systems  
+
+> **KohraRakshak measures fog — it doesn’t try to see through it.**
+
+---
+
+## 🧰 Tech Stack
+
+- **Frontend:** HTML / CSS / JavaScript (Dashboard UI)
+- **Backend Logic:** Python-style rule-based logic (Flask or mock APIs)
+- **Data Source:** Weather API or simulated visibility data
+- **Maps (Optional):** Leaflet / Google Maps API
+
+---
+
+## 🚀 Current Status
+
+🔧 **Under Active Development**
+
+The current version demonstrates:
+- Fog detection
+- Risk prediction
+- Driver alerts
+
+---
+
+## 🔮 Planned Enhancements
+
+- 🗺️ Fog heatmaps & route safety scoring  
+- 📊 Historical fog pattern analysis  
+- 🔔 Push notifications for high-risk zones  
+- 🚨 Emergency contact integration  
+- 🌧️ Expansion to rain, snow, and icy road hazards  
+
+---
+
+## 🎯 Key Philosophy
+
+> **Accidents don’t happen because of fog.  
+They happen because of late awareness.**
+
+KohraRakshak aims to fix that.
+
+---
+
+## 👨‍💻 Author
+
+**Yash Jaiswal**  
+B.Tech CSE | AI & Safety Systems Enthusiast  
+Building practical technology for real-world impact.
+
+---
+
+## 📌 Note
+
+This project was built as part of a hackathon / innovation initiative and is intended as a **proof-of-concept prototype** focused on safety, clarity, and feasibility.
+
+---
+
+⭐ If you find this idea impactful, feel free to star the repository!
