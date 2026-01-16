@@ -1,4 +1,7 @@
+
 # 🌫️ KohraRakshak – AI-Based Fog Safety System
+# Kohra Rakshak Dashboard
+
 
 KohraRakshak is an AI-powered road safety application designed to **prevent fog-related road accidents before they happen**.  
 Instead of reacting after an accident, the system focuses on **early detection, risk prediction, and real-time driver guidance**.

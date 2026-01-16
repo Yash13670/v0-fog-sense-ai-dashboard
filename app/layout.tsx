@@ -8,7 +8,7 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "FogSense AI - Road Safety Dashboard",
+  title: "Kohra Rakshak - Road Safety Dashboard",
   description: "Real-time fog detection and accident risk prediction system",
   generator: "v0.app",
   icons: {

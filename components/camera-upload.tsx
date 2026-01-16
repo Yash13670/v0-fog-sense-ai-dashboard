@@ -9,7 +9,7 @@ import { Camera, Upload, Loader2 } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 
 interface CameraUploadProps {
-  onFogDetected: (fogLevel: "none" | "medium" | "dense", visibility: number) => void
+  onFogDetected: (fogLevel: "none" | "medium" | "dense", visibility: number, timeOfDay?: "day" | "night") => void
 }
 
 export function CameraUpload({ onFogDetected }: CameraUploadProps) {
@@ -45,13 +45,14 @@ export function CameraUpload({ onFogDetected }: CameraUploadProps) {
       if (!response.ok) throw new Error("Fog detection failed")
 
       const data = await response.json()
-      console.log("[v0] Fog detection result:", data)
+      console.log("[Camera Upload] Raw API response:", data)
+      console.log("[Camera Upload] timeOfDay from API:", data.timeOfDay)
 
-      onFogDetected(data.fogLevel, data.visibility)
+      onFogDetected(data.fogLevel, data.visibility, data.timeOfDay)
 
       toast({
         title: "Image Analyzed",
-        description: `Detected: ${data.fogLevel} fog (${data.confidence}% confidence)`,
+        description: `Detected: ${data.fogLevel} fog (${data.confidence}% confidence) - ${data.timeOfDay === "night" ? "🌙 Night" : "☀️ Day"} time`,
       })
     } catch (error) {
       console.error("[v0] Image analysis error:", error)
